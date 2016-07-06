@@ -5,7 +5,7 @@ A Terraform module to provide an CloudFront in AWS.
 
 ```js
 module "terraform_aws_cloudfront_module" {
-  source = "git::https://github.com/SatoHiroyuki/terraform_aws_cloudfront_module"
+  source = "git::https://github.com/SatoHiroyuki/terraform_aws_cloudfront_module.git"
 
   aliases = "www.test.com"
   s3_bucket_asset_id = "asset_bucket"
