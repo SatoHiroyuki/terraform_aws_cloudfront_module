@@ -1,5 +1,6 @@
 # terraform_aws_cloudfront_module
 A Terraform module to provide an CloudFront in AWS.
+Origin is only S3.
 
 ## Usage
 
@@ -18,3 +19,6 @@ module "terraform_aws_cloudfront_module" {
  - `oai_id` - cloudfront_origin_access_identity_id
  - `cf_id` - cloudfront_distribution_id
 
+## Authors
+
+https://github.com/SatoHiroyuki
