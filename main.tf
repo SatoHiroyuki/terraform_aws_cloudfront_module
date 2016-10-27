@@ -3,7 +3,7 @@
 #
 
 resource "aws_cloudfront_origin_access_identity" "asset_origin_access_identity" {
-  comment = "asset_origin_access_identity"
+  comment = "${var.oai_comment}"
 }
 
 
@@ -14,7 +14,6 @@ resource "aws_cloudfront_distribution" "asset_cloudfront_distribution" {
 
   enabled                 = true
   retain_on_delete        = true
-  compress                = "${var.compress}"
   comment                 = "${var.comment}"
   price_class             = "${var.price_class}"
   aliases                 = ["${var.aliases}"]
@@ -47,6 +46,7 @@ resource "aws_cloudfront_distribution" "asset_cloudfront_distribution" {
     min_ttl                 = "${var.min_ttl}"
     default_ttl             = "${var.default_ttl}"
     max_ttl                 = "${var.max_ttl}"
+    compress                = "${var.compress}"
   }
 
 

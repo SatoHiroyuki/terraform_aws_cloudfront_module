@@ -1,3 +1,7 @@
+
+#OAI
+variable "oai_comment" {default = "asset_origin_access_identity"}
+
 # main
 variable "price_class" {default = "PriceClass_All"}
 variable "aliases" {default = "" }
