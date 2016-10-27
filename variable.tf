@@ -2,6 +2,7 @@
 variable "price_class" {default = "PriceClass_All"}
 variable "aliases" {default = "" }
 variable "default_root_object" {default = "index.html"}
+variable "comment" {default = "asset_cloudfront_distribution"}
 
 # origin
 variable "viewer_protocol_policy" {default = "allow-all"}
