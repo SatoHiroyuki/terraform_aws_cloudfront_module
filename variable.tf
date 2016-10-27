@@ -19,6 +19,7 @@ variable "ssl_support_method" {default = ""}
 
 # log
 variable "s3_bucket_log_id" {default = "" }
+variable "prefix" {default = "cloudfront"}
 
 # custom_error_response
 variable "error_caching_min_ttl" {default = "0"}
