@@ -14,7 +14,7 @@ resource "aws_cloudfront_distribution" "asset_cloudfront_distribution" {
 
   enabled                 = true
   retain_on_delete        = true
-  comment                 = "asset_cloudfront_distribution"
+  comment                 = "${var.comment}"
   price_class             = "${var.price_class}"
   aliases                 = ["${var.aliases}"]
   default_root_object     = "${var.default_root_object}"
