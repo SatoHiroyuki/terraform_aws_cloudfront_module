@@ -21,8 +21,8 @@ resource "aws_cloudfront_distribution" "asset_cloudfront_distribution" {
 
 
   origin {
-    domain_name       = "${concat("${var.s3_bucket_asset_id}", ".s3.amazonaws.com")}"
-    origin_id         = "${concat("S3-", "${var.s3_bucket_asset_id}")}"
+    domain_name       = "${var.s3_bucket_asset_id}.s3.amazonaws.com"
+    origin_id         = "S3-${var.s3_bucket_asset_id}"
 
     s3_origin_config {
       origin_access_identity = "${aws_cloudfront_origin_access_identity.asset_origin_access_identity.cloudfront_access_identity_path}"
@@ -32,7 +32,7 @@ resource "aws_cloudfront_distribution" "asset_cloudfront_distribution" {
   default_cache_behavior {
     allowed_methods  = ["GET", "HEAD" , "OPTIONS"]
     cached_methods   = ["GET", "HEAD"]
-    target_origin_id = "${concat("S3-", "${var.s3_bucket_asset_id}")}"
+    target_origin_id = "S3-${var.s3_bucket_asset_id}"
 
     forwarded_values {
       query_string = false
@@ -43,9 +43,9 @@ resource "aws_cloudfront_distribution" "asset_cloudfront_distribution" {
     }
 
     viewer_protocol_policy  = "${var.viewer_protocol_policy}"
-    min_ttl                = "${var.min_ttl}"
-    default_ttl            = "${var.default_ttl}"
-    max_ttl                = "${var.max_ttl}"
+    min_ttl                 = "${var.min_ttl}"
+    default_ttl             = "${var.default_ttl}"
+    max_ttl                 = "${var.max_ttl}"
   }
 
 
@@ -60,7 +60,7 @@ resource "aws_cloudfront_distribution" "asset_cloudfront_distribution" {
 
   logging_config {
     include_cookies = false
-    bucket          = "${concat("${var.s3_bucket_log_id}", ".s3.amazonaws.com")}"
+    bucket          = "${var.s3_bucket_log_id}.s3.amazonaws.com"
     prefix          = "cloudfront/"
   }
 
