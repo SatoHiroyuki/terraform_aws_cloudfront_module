@@ -22,8 +22,8 @@ resource "aws_cloudfront_distribution" "asset_cloudfront_distribution" {
 
 
   origin {
-    domain_name       = "${var.s3_bucket_asset_id}.s3.amazonaws.com"
-    origin_id         = "S3-${var.s3_bucket_asset_id}"
+    domain_name       = "${var.s3_bucket_domain_name}"
+    origin_id         = "${var.s3_bucket_origin_id}"
 
     s3_origin_config {
       origin_access_identity = "${aws_cloudfront_origin_access_identity.asset_origin_access_identity.cloudfront_access_identity_path}"
@@ -31,9 +31,9 @@ resource "aws_cloudfront_distribution" "asset_cloudfront_distribution" {
   }
 
   default_cache_behavior {
-    allowed_methods  = ["GET", "HEAD" , "OPTIONS"]
-    cached_methods   = ["GET", "HEAD"]
-    target_origin_id = "S3-${var.s3_bucket_asset_id}"
+    allowed_methods  = ["${var.allowed_methods}"]
+    cached_methods   = ["${var.cached_methods}"]
+    target_origin_id = "${var.s3_bucket_origin_id}"
 
     forwarded_values {
       query_string = false
