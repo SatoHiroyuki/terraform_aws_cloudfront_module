@@ -8,13 +8,14 @@ variable "aliases" {default = "" }
 variable "default_root_object" {default = "index.html"}
 variable "comment" {default = "asset_cloudfront_distribution"}
 variable "compress" {default = true}
+variable "web_acl_id" {default = ""}
 
 # origin
 variable "viewer_protocol_policy" {default = "allow-all"}
 variable "s3_bucket_asset_id" {default = "" }
-variable "min_ttl" {default = "10"}
-variable "default_ttl" {default = "10"}
-variable "max_ttl" {default = "10"}
+variable "min_ttl" {default = "5"}
+variable "default_ttl" {default = "5"}
+variable "max_ttl" {default = "5"}
 
 # viewer_certificate
 variable "cloudfront_default_certificate" {default = ""}

@@ -18,6 +18,7 @@ resource "aws_cloudfront_distribution" "asset_cloudfront_distribution" {
   price_class             = "${var.price_class}"
   aliases                 = ["${var.aliases}"]
   default_root_object     = "${var.default_root_object}"
+  web_acl_id              = "${var.web_acl_id}"
 
 
   origin {
