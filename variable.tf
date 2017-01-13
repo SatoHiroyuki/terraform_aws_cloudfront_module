@@ -28,6 +28,7 @@ variable "minimum_protocol_version"       {default = "SSLv3"}
 variable "ssl_support_method"             {default = ""}
 
 # log
+variable "include_cookies" {default = "" }
 variable "s3_bucket_log_name" {default = "" }
 variable "log_prefix"           {default = ""}
 
