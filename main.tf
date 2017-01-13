@@ -62,8 +62,8 @@ resource "aws_cloudfront_distribution" "asset_cloudfront_distribution" {
 
   logging_config {
     include_cookies = false
-    bucket          = "${var.s3_bucket_log_id}.s3.amazonaws.com"
-    prefix          = "${var.prefix}"
+    bucket          = "${var.s3_bucket_log_name}"
+    prefix          = "${var.log_prefix}"
   }
 
   custom_error_response {

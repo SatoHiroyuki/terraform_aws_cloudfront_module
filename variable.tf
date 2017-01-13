@@ -28,8 +28,8 @@ variable "minimum_protocol_version"       {default = "SSLv3"}
 variable "ssl_support_method"             {default = ""}
 
 # log
-variable "s3_bucket_log_id" {default = "" }
-variable "prefix"           {default = "cloudfront"}
+variable "s3_bucket_log_name" {default = "" }
+variable "log_prefix"           {default = ""}
 
 # custom_error_response
 variable "error_caching_min_ttl" {default = "0"}
