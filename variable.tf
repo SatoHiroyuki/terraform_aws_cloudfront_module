@@ -3,6 +3,7 @@
 variable "oai_comment" {default = "asset_origin_access_identity"}
 
 # main
+variable "is_ipv6_enabled"      {default = "true"}
 variable "price_class"          {default = "PriceClass_All"}
 variable "aliases"              {default = "" }
 variable "default_root_object"  {default = ""}
@@ -28,9 +29,9 @@ variable "minimum_protocol_version"       {default = "SSLv3"}
 variable "ssl_support_method"             {default = ""}
 
 # log
-variable "include_cookies" {default = "" }
+variable "include_cookies"    {default = "" }
 variable "s3_bucket_log_name" {default = "" }
-variable "log_prefix"           {default = ""}
+variable "log_prefix"         {default = ""}
 
 # custom_error_response
 variable "error_caching_min_ttl" {default = "0"}

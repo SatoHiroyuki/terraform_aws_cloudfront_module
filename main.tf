@@ -14,6 +14,7 @@ resource "aws_cloudfront_distribution" "asset_cloudfront_distribution" {
 
   enabled                 = true
   retain_on_delete        = true
+  is_ipv6_enabled         = "${var.is_ipv6_enabled}"
   comment                 = "${var.comment}"
   price_class             = "${var.price_class}"
   aliases                 = ["${var.aliases}"]
