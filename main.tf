@@ -42,6 +42,7 @@ resource "aws_cloudfront_distribution" "asset_cloudfront_distribution" {
       cookies {
         forward = "none"
       }
+      headers = ["${var.headers}"]
     }
 
     viewer_protocol_policy  = "${var.viewer_protocol_policy}"

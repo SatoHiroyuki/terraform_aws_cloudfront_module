@@ -20,6 +20,7 @@ variable "cached_methods"         {default = ["GET", "HEAD"]}
 variable "min_ttl"                {default = "5"}
 variable "default_ttl"            {default = "5"}
 variable "max_ttl"                {default = "5"}
+variable "headers"                {default = ["Origin","Access-Control-Request-Method","Access-Control-Request-Headers"]}
 
 # viewer_certificate
 variable "cloudfront_default_certificate" {default = ""}
